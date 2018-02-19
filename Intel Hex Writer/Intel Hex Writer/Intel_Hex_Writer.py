@@ -5,7 +5,7 @@ file_name += ".HEX"
 hex_file = open(file_name, "w")
 line_count = input("How many hex lines do you want to write? (enter in base 10) ")
 line_count = int(line_count,10)
-line_string = ""
+
 
 for lines in range(line_count):
     record_size = input("How many data bytes do you want to write in this line? (enter in base 10) ")
@@ -16,7 +16,7 @@ for lines in range(line_count):
         record_size = "0" + record_size
     hex_file.write(":")
     hex_file.write(record_size)
-    line_string = line_string + record_size
+    
     addr = input("What is the starting address? (enter in base 10) ")
     addr_copy = int(addr,10)
     addr = hex(int(addr,10))
@@ -27,7 +27,7 @@ for lines in range(line_count):
     print('\n')
     hex_file.write(addr)
     hex_file.write("00") #Record type value
-    line_string = line_string + addr + "00"
+    
     print(addr)
     byte_sum = "0"
     data_byte_sum = int(byte_sum,10)
